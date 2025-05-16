@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%;
+    width: 96%;
+    background-color: black;
+}
+
+.navBar .leftBar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navBar .leftBar .menuBar {
+    display: none;
+    font-size: 25px;
+    color: white;
+}
+
+.navBar .leftBar .logo img {
+    width: 180px;
+    height: 50px;
+}
+
+.navBar .rightBar {
+    display: flex;
+    align-items: center;
+}
+
+.navBar .rightBar .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 3px;
+    margin: 0px 5px;
+
+}
+
+.navBar .rightBar .links .active {
+    border-bottom: 2px solid white;
+}
+
+.navBar .rightBar .mainLink {
+    margin: 0px 30px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.navBar .rightBar .mainLink a {
+    display: flex;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.navBar .rightBar .mainLink a:hover {
+    transform: translate(2px, 2px);
+}
+
+.mainText {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    border-bottom: 1px solid;
+}
+
+
+/* Main content */
+.mainBody {
+    width: 90%;
+    padding: 20px 5%;
+}
+
+.contents {
+    max-width: 1400px;
+    margin: auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.imgContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.imgContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Fixed width and height for images */
+.imgContainer img {
+    width: 300px;
+    /* Fixed width */
+    height: 300px;
+    /* Fixed height */
+    object-fit: cover;
+    /* Ensures the image fits within the container without distortion */
+    flex-shrink: 0;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    background: #fff;
+}
+
+.imgContainer img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+    .imgContainer img {
+        width: 250px;
+        /* Adjust image size for medium screens */
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgContainer img {
+        width: 180px;
+        /* Adjust image size for small screens */
+        height: 180px;
+    }
+}
+
+.subText {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.socialMedia {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 30px;
+}
+
+.socialMedia a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+}
+
+p {
+    margin: 3px 0;
+    text-align: center;
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 800px) {
+    .navBar .leftBar {
+        gap: 30px;
+    }
+
+    .navBar .leftBar .menuBar {
+        display: block;
+        cursor: pointer;
+        font-size: 35px;
+    }
+
+    .navBar .rightBar .links {
+        display: none;
+    }
+
+    .navBar .leftBar .logo img {
+        width: 150px;
+        height: 40px;
+    }
+
+    .navBar .rightBar .mainLink a {
+        display: flex;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 3px;
+        font-weight: 400;
+    }
+
+
+}
+.menuContent{
+    position: fixed;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.89);
+    width: 60%;
+    display: none;
+    justify-content: center;
+    animation: slide 0.3s ease-in; 
+}
+@keyframes slide {
+    0%{
+        margin-left: -50%;
+    }
+    100%{
+        margin-left: 0%;
+    }
+}
+.menuContent .links{
+    margin-top: 10%;
+}
+.menuContent .links a{
+    display: block;
+    text-decoration: none;
+    margin: 10px 0;
+    color: white;
+    font-size: 18px;
+}

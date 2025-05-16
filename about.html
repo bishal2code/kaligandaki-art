@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kali Gandaki | About</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/594ea2317b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="navBar">
+        <div class="leftBar">
+            <div  class="menuBar"><i id="menuBtn" class="fa-solid fa-bars"></i></div>
+            <div class="logo"><img src="Logo.jpeg" alt="Not Supported"></div>
+        </div>
+        <div class="rightBar">
+            <div class="links">
+                <a href="/">Home</a>
+                <a class="active" href="/about.html">About Us</a>
+            </div>
+            <div class="mainLink">
+                <a ref="tel:+9779867108375">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <div id="menuContent" class="menuContent">
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/about.html">Contact Us</a>
+      </div>
+    </div>
+
+  <main class="about-container">
+    <section class="artisan-profile">
+      <img src="https://i.postimg.cc/7LbVLjpR/mama-removebg-preview.png" alt="Sudip Lamichhane" class="profile-pic"/>
+      <div class="profile-text">
+        <h1>Sudip Lamichhane</h1>
+        <p>
+          Skilled artisan renowned for his exceptional talent in creating breathtaking god statues and intricate marble art. With a deep passion for preserving cultural heritage and a meticulous eye for detail, his work transforms raw materials into timeless masterpieces that inspire devotion and admiration. Each piece reflects his dedication, precision, and artistic brilliance, making him a true visionary in the world of sacred and marble artistry.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="shop-info">
+      <h2>About Our Shop</h2>
+      <div class="shop-content">
+        <img src="https://i.postimg.cc/x8Vyt8cr/474717802-1358674532250545-2708580096580805498-n.jpg" alt="Shop" class="shop-img"/>
+        <p>
+          Located in Kusma, Parbat, Kali Gandaki Marble & Murti Art specializes in creating exquisite statues and sculptures tailored to your unique vision. Whether it's a divine deity, a custom design, or a personalized masterpiece.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+     var menuBtn = document.getElementById("menuBtn");
+    var menuContent = document.getElementById("menuContent");
+    menuBtn.addEventListener("click",()=>{
+      if(menuBtn.className == "fa-solid fa-bars"){
+        menuContent.style.display = "flex";
+        menuBtn.className = "fa-solid fa-xmark";
+      }
+      else{
+         menuContent.style.display = "none";
+         menuBtn.className = "fa-solid fa-bars";
+      }
+    })
+
+    document.addEventListener('click', function (event) {
+    if (!menuContent.contains(event.target) && menuBtn.className == "fa-solid fa-xmark"&&!menuBtn.contains(event.target)) {
+      menuContent.style.display = "none";
+         menuBtn.className = "fa-solid fa-bars";
+    }
+  });
+  </script>
+</body>
+</html>

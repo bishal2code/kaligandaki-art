@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali Gandaki | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/594ea2317b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navBar">
+        <div class="leftBar">
+            <div  class="menuBar"><i id="menuBtn" class="fa-solid fa-bars"></i></div>
+            <div class="logo"><img src="Logo.jpeg" alt="Not Supported"></div>
+        </div>
+        <div class="rightBar">
+            <div class="links">
+                <a class="active" href="/">Home</a>
+                <a href="/about.html">About Us</a>
+            </div>
+            <div class="mainLink">
+                <a ref="tel:+9779867108375">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <div id="menuContent" class="menuContent">
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/about.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="mainText">
+        Our Art And Products.
+    </div>
+    <div class="mainBody">
+    <div class="contents">
+      <div class="imgContainer" id="imgContainer">
+        <img src="https://i.postimg.cc/J7JwG8Pk/murti4.jpg" alt="Image">
+        <img src="https://i.postimg.cc/26ZtbdFD/murti3.jpg" alt="Image">
+        <img src="https://i.postimg.cc/fT2vstmj/murti2.jpg" alt="Image">
+        <img src="https://i.postimg.cc/65mCgsxM/murti1.jpg" alt="Image">
+        <img src="https://i.postimg.cc/KjYgpfqX/silalekh1.jpg" alt="Image">
+      </div>
+    </div>
+    <div class="subText">
+        हाम्रो यहाँ गुणस्तरीय मूर्ति र शिलालेखहरू सहज रूपमा उपलब्ध छन्, साथै अर्डर अनुसार पनि तयार पारिन्छ।
+    </div>
+
+    <div class="socialMedia">
+      <div class="a">
+        <a target="_blank" href="https://www.facebook.com/tolanath.lamichhane.9"><i class="fa-brands fa-facebook"></i></a>
+        <a target="_blank" href="https://www.facebook.com/tolanath.lamichhane.9"><i class="fa-brands fa-tiktok"></i></a>
+        <a target="_blank" href="https://www.facebook.com/tolanath.lamichhane.9"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <p>Kaligandaki Marvel And Murti Art</p>
+    <p>Kusma-1,Parbat,Nepal</p>
+    <p>Phone no: 985202206</p>
+    <p>Email : kaligandakiart@gmail.com</p>
+    <script>
+    const imgContainer = document.getElementById('imgContainer');
+    let scrollSpeed = 1.5;
+    let direction = 1;
+
+    function autoScroll() {
+      const maxScroll = imgContainer.scrollWidth - imgContainer.clientWidth;
+
+      if (direction === 1 && Math.ceil(imgContainer.scrollLeft) >= maxScroll) {
+        direction = -1;
+      } else if (direction === -1 && Math.floor(imgContainer.scrollLeft) <= 0) {
+        direction = 1;
+      }
+
+      imgContainer.scrollLeft += direction * scrollSpeed;
+      requestAnimationFrame(autoScroll);
+    }
+
+    requestAnimationFrame(autoScroll);
+
+
+    // Menu Button 
+    var menuBtn = document.getElementById("menuBtn");
+    var menuContent = document.getElementById("menuContent");
+    menuBtn.addEventListener("click",()=>{
+      if(menuBtn.className == "fa-solid fa-bars"){
+        menuContent.style.display = "flex";
+        menuBtn.className = "fa-solid fa-xmark";
+      }
+      else{
+         menuContent.style.display = "none";
+         menuBtn.className = "fa-solid fa-bars";
+      }
+    })
+
+    document.addEventListener('click', function (event) {
+    if (!menuContent.contains(event.target) && menuBtn.className == "fa-solid fa-xmark"&&!menuBtn.contains(event.target)) {
+      menuContent.style.display = "none";
+         menuBtn.className = "fa-solid fa-bars";
+    }
+  });
+  </script>
+</body>
+</html>

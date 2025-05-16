@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%;
+    width: 96%;
+    background-color: black;
+}
+
+.navBar .leftBar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navBar .leftBar .menuBar {
+    display: none;
+    font-size: 25px;
+    color: white;
+}
+
+.navBar .leftBar .logo img {
+    width: 180px;
+    height: 50px;
+}
+
+.navBar .rightBar {
+    display: flex;
+    align-items: center;
+}
+
+.navBar .rightBar .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 3px;
+    margin: 0px 5px;
+
+}
+
+.navBar .rightBar .links .active {
+    border-bottom: 2px solid white;
+}
+
+.navBar .rightBar .mainLink {
+    margin: 0px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.navBar .rightBar .mainLink a {
+    display: flex;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.navBar .rightBar .mainLink a:hover {
+    transform: translate(2px, 2px);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 15px 5%;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo h2 {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.logo span {
+  font-size: 12px;
+  color: #cfcfcf;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+nav a.active {
+  border-bottom: 2px solid white;
+}
+
+nav .contact-btn {
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 5%;
+}
+
+.artisan-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+}
+
+.profile-text h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.profile-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+hr {
+  border: 1px solid #111;
+  margin: 30px 0;
+}
+
+.shop-info h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.shop-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.shop-img {
+  width: 220px;
+  border: 2px solid #222;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.shop-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .artisan-profile,
+  .shop-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 800px) {
+    .navBar .leftBar {
+        gap: 30px;
+    }
+
+    .navBar .leftBar .menuBar {
+        display: block;
+        cursor: pointer;
+        font-size: 35px;
+    }
+
+    .navBar .rightBar .links {
+        display: none;
+    }
+
+    .navBar .leftBar .logo img {
+        width: 150px;
+        height: 40px;
+    }
+
+    .navBar .rightBar .mainLink a {
+        display: flex;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 3px;
+        font-weight: 400;
+    }
+
+
+}
+.menuContent{
+    position: fixed;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.89);
+    width: 60%;
+    display: none;
+    justify-content: center;
+    animation: slide 0.3s ease-in; 
+}
+@keyframes slide {
+    0%{
+        margin-left: -50%;
+    }
+    100%{
+        margin-left: 0%;
+    }
+}
+.menuContent .links{
+    margin-top: 10%;
+}
+.menuContent .links a{
+    display: block;
+    text-decoration: none;
+    margin: 10px 0;
+    color: white;
+    font-size: 18px;
+}
